@@ -1,7 +1,3 @@
-.col {
-	padding: 0px !important;
-}
-
-.inputbox {
-	border: 3px solid;
+.container {
+	margin-top: 20px;
 }

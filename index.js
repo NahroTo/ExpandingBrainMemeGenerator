@@ -1,13 +1,15 @@
 $(document).ready(function()
 {
 	var row = 2;
-	const IMAGE_SCALE = 0.6;
+	const IMAGE_SCALE = 0.7;
 	const IMAGE_HEIGHT = 300 * IMAGE_SCALE;
+	const INIT_CANVAS_HEIGHT = IMAGE_HEIGHT + 305 * IMAGE_SCALE + 275 * IMAGE_SCALE + 3;
 	var rects = [];
 	var canvas = new fabric.Canvas('c');
-	canvas.setWidth(400 * IMAGE_SCALE + 438 * IMAGE_SCALE)
+	canvas.setWidth(400 * IMAGE_SCALE + 438 * IMAGE_SCALE);
+	canvas.setHeight(INIT_CANVAS_HEIGHT);
 	var offset = document.documentElement.clientWidth / 2 - canvas.width / 2;
-	$("#c").css("margin-left", offset);
+	$("#cis").css("margin-left", offset);
 	var sumHeight = 0;
 	for (var i = 0; i < 9; i++)
 	{
@@ -29,7 +31,8 @@ $(document).ready(function()
 		oImg.left = rects[0].left + rects[0].width;
 		canvas.add(oImg);
 	});
-	
+	var text = new fabric.IText("Edit this text...", { left:30, top:30, fontFamily:"Arial", fontSize:32});
+	canvas.add(text);
 	
 	$("#addrow").click(function()
 	{
@@ -46,7 +49,11 @@ $(document).ready(function()
 		if (row < 8)
 			$("#addrow").show();
 	});
-
+	$("#addtext").click(function()
+	{
+		var text = new fabric.IText("Edit this text...", { left:30, top:30, fontFamily:"Arial", fontSize:32});
+		canvas.add(text);
+	});
 	function addRow()
 	{
 		row++;
@@ -66,8 +73,11 @@ $(document).ready(function()
 		var height = defaultHeight;
 		switch(index)
 		{
+			case 1:
+			height = 305 * IMAGE_SCALE;
+			break;
 			case 2:
-			height = 226;
+			height = 275 * IMAGE_SCALE;
 			break;
 			case 3:
 			height = 323 * IMAGE_SCALE;

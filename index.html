@@ -7,10 +7,13 @@
 	<link rel="stylesheet" type="text/css" href="custom.css">
 </head>
 <body class="grey">
+	<div id="cis">
 	<canvas width="720" height="709" id="c"></canvas>
-	<div class="container center">
-		<button type="button" class="btn-large green waves-effect" id="addrow">Add row</button>
-		<button type="button" class="btn-large red waves-effect" id="removerow" style="display: none;">Remove last row</button>
+	</div>
+	<div class="container">
+		<button type="button" class="btn green waves-effect left" id="addtext">Add text</button>
+		<button type="button" class="btn-large green waves-effect right" id="addrow">Add row</button>
+		<button type="button" class="btn-large red waves-effect right" id="removerow" style="display: none;right: 20px;">Remove last row</button>
 	</div>
 	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>

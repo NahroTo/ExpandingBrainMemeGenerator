@@ -48,21 +48,16 @@ $(document).ready(function()
 	});
 	$("#addtext").click(function()
 	{
-		var text = new fabric.Textbox('Edit this text...', {
-			width: 400 * IMAGE_SCALE,
+		var text = new fabric.IText('Edit this text...', {
 			top: 10,
-			left: 10,
-			fontSize: 16,
+			left: 150,
+			fontSize: 18,
 			textAlign: 'center',
-			fixedHeight: 400 * IMAGE_SCALE
+			fontFamily:"Arial"
 		});
 
 		canvas.on('text:changed', function(opt) {
-			var text = opt.target;
-			if (text.height > text.fixedHeight) {
-				text.fontSize *= text.fixedHeight / (text.height + 1);
-				text.height = text.fixedHeight;
-			}
+			
 		});
 		canvas.add(text);
 	});

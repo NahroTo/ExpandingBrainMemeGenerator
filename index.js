@@ -24,16 +24,13 @@ $(document).ready(function()
 		rects.push(rect);
 		canvas.add(rect);
 	}
-	fabric.Image.fromURL('part3.png', function(oImg)
+	fabric.Image.fromURL('image.png', function(oImg)
 	{
 		oImg.selectable = false;
 		oImg.scale(IMAGE_SCALE);
 		oImg.left = rects[0].left + rects[0].width;
 		canvas.add(oImg);
 	});
-	var text = new fabric.IText("Edit this text...", { left:30, top:30, fontFamily:"Arial", fontSize:32});
-	canvas.add(text);
-	
 	$("#addrow").click(function()
 	{
 		addRow();
@@ -51,7 +48,22 @@ $(document).ready(function()
 	});
 	$("#addtext").click(function()
 	{
-		var text = new fabric.IText("Edit this text...", { left:30, top:30, fontFamily:"Arial", fontSize:32});
+		var text = new fabric.Textbox('Edit this text...', {
+			width: 400 * IMAGE_SCALE,
+			top: 10,
+			left: 10,
+			fontSize: 16,
+			textAlign: 'center',
+			fixedHeight: 400 * IMAGE_SCALE
+		});
+
+		canvas.on('text:changed', function(opt) {
+			var text = opt.target;
+			if (text.height > text.fixedHeight) {
+				text.fontSize *= text.fixedHeight / (text.height + 1);
+				text.height = text.fixedHeight;
+			}
+		});
 		canvas.add(text);
 	});
 	function addRow()

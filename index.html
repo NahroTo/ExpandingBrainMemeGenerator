@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
 	<link rel="stylesheet" type="text/css" href="custom.css">
 </head>
 <body class="grey">
@@ -13,13 +13,17 @@
 	<div class="container">
 		<div class="row">
 			<button type="button" class="btn green waves-effect left" id="addtext">Add text</button>
-			<button type="button" class="btn-large green waves-effect right" id="addrow">Add row</button>
-			<button type="button" class="btn-large red waves-effect right" id="removerow" style="display: none;right: 20px;">Remove last row</button>
+			<button type="button" class="btn green waves-effect right" id="addrow">Add row</button>
+			<button type="button" class="btn red waves-effect right" id="removerow" style="display: none;right: 20px;">Remove last row</button>
+		</div>
+		<div class="row">
+			<button type="button" class="btn-large blue waves-effect" id="downloadimg">Download as image</button>
 		</div>
 	</div>
-	<script type="text/javascript" src="//code.jquery.com/jquery-2.1.1.min.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
-	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/fabric.js/1.7.9/fabric.min.js"></script>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/fabric.js/1.7.9/fabric.min.js"></script>
+	<script type="text/javascript" src="js/canvas-toBlob.js"></script>
 	<script type="text/javascript" src="js/FileSaver.min.js"></script>
 	<script type="text/javascript" src="js/index.js"></script>
 </body>

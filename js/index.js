@@ -55,11 +55,16 @@ $(document).ready(function()
 			textAlign: 'center',
 			fontFamily:"Arial"
 		});
-
-		canvas.on('text:changed', function(opt) {
-			
-		});
 		canvas.add(text);
+	});
+
+	$("#downloadimg").click(function()
+	{
+		var canvas = document.getElementById("c");
+		canvas.toBlob(function(blob)
+		{
+			saveAs(blob, "dankmeme.png");
+		});
 	});
 	function addRow()
 	{
